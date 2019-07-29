@@ -19,6 +19,10 @@ router.get('/jq_intro', function (req, res) {
     res.sendFile(path.join(__dirname + '/views/minwoo/jq_intro.html'));
     //__dirname : It will resolve to your project folder.
     });
+    router.get('/manage', function (req, res) {
+        res.sendFile(path.join(__dirname + '/views/manage.html'));
+        //__dirname : It will resolve to your project folder.
+        });
         
 
         
