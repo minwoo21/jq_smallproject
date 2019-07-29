@@ -23,11 +23,11 @@ router.get('/', function (req, res) {
         
 
         
-router.get('/login', function (req, res) {
-    console.log(req.query);
-        res.send('<h1>Request parmeters</h1>First name : '+ req.query.first +'<br>Last name : '
-        + req.query.last + '<br>Username : '+ req.query.name+ '<br>City : '+ req.query.city
-        + '<br>State : '+ req.query.state+ '<br>Zip : '+ req.query.zip);
+router.get('/success', function (req, res) {
+    // console.log(req.query);
+    //     res.send('<h1>Request parmeters</h1>First name : '+ req.query.first +'<br>Last name : '
+    //     + req.query.last + '<br>Username : '+ req.query.name+ '<br>City : '+ req.query.city
+    //     + '<br>State : '+ req.query.state+ '<br>Zip : '+ req.query.zip);
     
     });
 
