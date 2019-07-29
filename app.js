@@ -12,16 +12,28 @@ const router = express.Router();
 router.get('/', function (req, res) {
     res.sendFile(path.join(__dirname + '/main.html'));
     //__dirname : It will resolve to your project folder.
-    });
+});
+ 
 
-//-------------------kimminwoo------------------------------------ 
-
-    router.get('/manage', function (req, res) {
-        res.sendFile(path.join(__dirname + '/manage.html'));
-        //__dirname : It will resolve to your project folder.
-        });
+router.get('/manage', function (req, res) {
+    res.sendFile(path.join(__dirname + '/manage.html'));
+    //__dirname : It will resolve to your project folder.
+});
         
+router.get('/help', function (req, res) {
+    res.sendFile(path.join(__dirname + '/help.html'));
+    //__dirname : It will resolve to your project folder.
+});
 
+router.get('/login', function (req, res) {
+    res.sendFile(path.join(__dirname + '/login.html'));
+    //__dirname : It will resolve to your project folder.
+});
+
+router.get('/signup', function (req, res) {
+    res.sendFile(path.join(__dirname + '/signup.html'));
+    //__dirname : It will resolve to your project folder.
+});
         
 router.get('/success', function (req, res) {
     // console.log(req.query);
@@ -31,7 +43,7 @@ router.get('/success', function (req, res) {
     
     });
 
-//-------------------choijungjin------------------------------------ 
+
 
 
 
