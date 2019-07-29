@@ -19,7 +19,10 @@ router.get('/manage', function (req, res) {
     res.sendFile(path.join(__dirname + '/manage.html'));
     //__dirname : It will resolve to your project folder.
 });
-        
+router.get('/intro', function (req, res) {
+    res.sendFile(path.join(__dirname + '/intro.html'));
+    //__dirname : It will resolve to your project folder.
+}); 
 router.get('/help', function (req, res) {
     res.sendFile(path.join(__dirname + '/help.html'));
     //__dirname : It will resolve to your project folder.
@@ -35,11 +38,11 @@ router.get('/signup', function (req, res) {
     //__dirname : It will resolve to your project folder.
 });
         
-router.get('/login', function (req, res) {
-    console.log(req.query);
-        res.send('<h1>Request parmeters</h1>First name : '+ req.query.first +'<br>Last name : '
-        + req.query.last + '<br>Username : '+ req.query.name+ '<br>City : '+ req.query.city
-        + '<br>State : '+ req.query.state+ '<br>Zip : '+ req.query.zip);
+router.get('/success', function (req, res) {
+    // console.log(req.query);
+    //     res.send('<h1>Request parmeters</h1>First name : '+ req.query.first +'<br>Last name : '
+    //     + req.query.last + '<br>Username : '+ req.query.name+ '<br>City : '+ req.query.city
+    //     + '<br>State : '+ req.query.state+ '<br>Zip : '+ req.query.zip);
     
     });
 
