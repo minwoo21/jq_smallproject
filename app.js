@@ -10,15 +10,16 @@ const path = require('path');
 const router = express.Router();
 
 router.get('/', function (req, res) {
-    res.sendFile(path.join(__dirname + '/index.html'));
+    res.sendFile(path.join(__dirname + '/main.html'));
     //__dirname : It will resolve to your project folder.
     });
 
 //-------------------kimminwoo------------------------------------ 
-router.get('/jq_intro', function (req, res) {
-    res.sendFile(path.join(__dirname + '/views/minwoo/jq_intro.html'));
-    //__dirname : It will resolve to your project folder.
-    });
+
+    router.get('/manage', function (req, res) {
+        res.sendFile(path.join(__dirname + '/manage.html'));
+        //__dirname : It will resolve to your project folder.
+        });
         
 
         
@@ -31,10 +32,7 @@ router.get('/login', function (req, res) {
     });
 
 //-------------------choijungjin------------------------------------ 
-router.get('/jquery', function (req, res) {
-    res.sendFile(path.join(__dirname + '/views/jquery.html'));
-    //__dirname : It will resolve to your project folder.
-});
+
 
 
 
