@@ -19,7 +19,10 @@ router.get('/manage', function (req, res) {
     res.sendFile(path.join(__dirname + '/manage.html'));
     //__dirname : It will resolve to your project folder.
 });
-        
+router.get('/intro', function (req, res) {
+    res.sendFile(path.join(__dirname + '/intro.html'));
+    //__dirname : It will resolve to your project folder.
+}); 
 router.get('/help', function (req, res) {
     res.sendFile(path.join(__dirname + '/help.html'));
     //__dirname : It will resolve to your project folder.
