@@ -10,7 +10,8 @@
             crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
             integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <script src = "./js/login.js"></script>
+            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+            integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
         <style>
             p {
                 padding: 0;
@@ -19,7 +20,7 @@
         </style>
     </head>
 
-    <body onload="getCookie(myform)">
+    <body class="pt-5">
         <div class="header bg-secondary fixed-top">
             <nav class="navbar navbar-expand-lg navbar-dark bg-secondary container">
                 <a class="navbar-brand" href="/">강박Bank</a>
@@ -52,32 +53,63 @@
             </nav>
         </div>
 
-        <div class="body pt-5" style="height: 800px;">
-            <div class="container d-flex justify-content-center">
-                <form class="p-4 col-6" name="myform" action="/" onsubmit="return setCookie(this)" >
-                    <div class="form-group">
-                        <h1 id="login" class="form-text text-muted text-center">LOGIN</h1>
-                        <label><strong>ID</strong> </label>
-                        <input type="text" class="form-control" id="id" placeholder="아이디">
-                    </div>
-                    <div class="form-group">
-                        <div class="d-flex justify-content-between">
-                                <label><strong>Password</strong></label> <a href="#" ><strong>Forgot password?</strong></a>
-                        </div>
-                        
-                        <input type="password" class="form-control" id="password" placeholder="Password">
-                    </div>
-                    <div class="form-group">
-                        <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="cbox">
-                        <label class="form-check-label">
-                            Remember me
-                        </label>
+
+        <div class="body pt-5" style="height: 740px;">
+            <div class="container">
+                <label for="name">NAME</label>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">
+                            <span class="fas fa-user"></span>
                         </div>
                     </div>
-                    <button type="submit" class="bg-muted w-100">로그인</button>
-                </form>
-            </div> 
+                    <input type="text" class="form-control" placeholder="이름">
+                </div>
+                    
+                <label for="rrnumber">Resident registration number</label>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">
+                            <span class="fas fa-address-card"></span>
+                        </div>
+                    </div>
+                    <input type="number" class="form-control" placeholder="주민등록번호(13자리)">
+                </div>
+                
+                <label for="phone">phone</label>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">
+                            <span class="fas fa-phone-square"></span>
+                        </div>
+                    </div>
+                    <input type="number" class="form-control" placeholder="휴대폰번호(010XXXXXXXX)">
+                </div>
+                
+                <label for="email">email</label>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">@</span>
+                    </div>
+                    <input type="email" class="form-control" placeholder="이메일">
+                </div>
+                
+                <label for="id">ID</label>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text fas fa-user-circle"></span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="아이디">
+                </div>
+                <label for="pwd">PASSWORD</label>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text fas fa-user-circle"></span>
+                    </div>
+                    <input type="password" class="form-control" placeholder="비밀번호">
+                </div>
+                <button type="submit" class="bg-muted w-100">확인</button>
+            </div>
         </div>
 
         <div class="footer bg-secondary text-dark mt-5">
