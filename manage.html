@@ -25,16 +25,17 @@
                 var d = new Date();
                 d.setTime(d.getTime() + (20 * 24 * 60 * 60 * 1000));
                 var expires = "expires=" + d.toGMTString();
-                $("#name").html(searchCookie('name'));
-                $("#phone").html(searchCookie('phone'));
-                $("#num").html(searchCookie('num'));
-                $("#limit").html(searchCookie('limit'));
-                $("#remain").html(searchCookie('remain'));
                 document.cookie = "name=최중진;" + expires + ";path=/";
                 document.cookie = "phone=010-1111-1111;" + expires + ";path=/";
                 document.cookie = "num=46846465;" + expires + ";path=/";
                 document.cookie = "limit=500000;" + expires + ";path=/";
                 document.cookie = "remain=100000;" + expires + ";path=/";
+                $("#name").html(searchCookie('name'));
+                $("#phone").html(searchCookie('phone'));
+                $("#num").html(searchCookie('num'));
+                $("#limit").html(searchCookie('limit'));
+                $("#remain").html(searchCookie('remain'));
+                
             }
             function searchCookie(name) {
                 var value = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)');
