@@ -1,12 +1,38 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <script>
-            
+            function setCookie(this_form) {
+                var d = new Date();
+                d.setTime(d.getTime() + (20 * 24 * 60 * 60 * 1000));
+                var expires = "expires=" + d.toGMTString();
+                document.cookie = name + "= 최중진 ;" + expires + ";path=/";
+                document.cookie = phone + "= 010-1111-1111 ;" + expires + ";path=/";
+                document.cookie = num + "= 1641684861 ;" + expires + ";path=/";
+                document.cookie = limit + "= 500000 ;" + expires + ";path=/";
+                document.cookie = remain + "= 100000 ;" + expires + ";path=/";
+                //document.cookie = this_form.email.id + "=" + this_form.email.value + ";" + expires + ";path=/";
+               //document.cookie = this_form.cbox.id + "=" + this_form.cbox.checked + ";" + expires + ";path=/";
+            }
+
+            function searchCookie(name) {
+                var value = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)');
+                return value? value[2] : null;
+            }
+
+            function getCookie(this_form) {
+                if(searchCookie('email') !=null &&searchCookie('cbox') !=null){
+                    if(searchCookie('cbox')=='true'){
+                        this_form.email.value = searchCookie('email');
+                        this_form.cbox.setAttribute("checked", "checked");
+                    }
+                }
+            }
         </script>
         <style>
             p{
@@ -48,27 +74,57 @@
         </div>
         <div class="body pt-5">
             <!-- 내정보 -->
-            <div class="col-12">
+            <div class="col-12 mt-5">
                 <div class="container">
                     <div class="row">
-                        <div class="col-6">
-                            <div>
-                                
+                        <div class="col-6 d-flex justify-content-end">
+                            <div class="card" style="width: 10rem;">
+                                <img src="/user.jpg" class="card-img-top">
+                                <div class="card-body">
+                                    <a href="#" class="btn">내정보 수정</a>
+                                </div>
                             </div>
                         </div>
                         <div class="col-6">
-                            
+                            <ul class="list-unstyled">
+                                <li>이름 : <span id="name"></span></li>
+                                <li>전화번호 : <span id="phone"></span></li>
+                                <li>계좌번호 : <span id="num"></span></li>
+                                <li>이체한도 : <span id="limit"></span></li>
+                                <li>잔액 : <span id="remain"></span></li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
             <!-- 이체 대출정보 -->
             <div class="row">
-                <div>
-
+                <div class="col-lg-6 col-sm-12 p-5">
+                    <form onsubmit="check(this)">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">계좌 번호</label>
+                            <input type="number" class="form-control" id="code" >
+                            </div>
+                            <div class="form-group">
+                            <label for="exampleInputPassword1">금액</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                            <span class="fas fa-dollar-sign"></span>
+                                    </div>
+                                </div>
+                                <input type="number" class="form-control" id="price" name=price>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary">이체</button>
+                            <button type="button" class="btn btn-primary" onclick="setCookie()">이체</button>
+                    </form>
                 </div>
-                <div>
-
+                <div class="col-lg-6 col-sm-12 p-5 border rounded">
+                    <h3>대출</h3>
+                    <div class="text-center py-5">
+                        <h1>1,000,000원</h1>
+                    </div>
                 </div>
             </div>
 
